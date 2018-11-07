@@ -1,0 +1,45 @@
+{
+  "name": "reason-spotify-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "apollo-cache-inmemory": "^1.3.6",
+    "apollo-client": "^2.4.3",
+    "apollo-link": "^1.2.3",
+    "apollo-link-context": "^1.0.9",
+    "apollo-link-error": "^1.1.1",
+    "apollo-link-http": "^1.5.5",
+    "apollo-link-ws": "^1.0.9",
+    "graphql": "^14.0.2",
+    "graphql-tag": "^2.10.0",
+    "react": "^16.5.2",
+    "react-apollo": "^2.2.4",
+    "react-dom": "^16.5.2",
+    "reason-apollo": "^0.14.1",
+    "reason-scripts": "1.0.0",
+    "subscriptions-transport-ws": "^0.9.15"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "schema": "yarn send-introspection-query http://localhost:4000/graphql"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "@glennsl/bs-jest": "^0.4.4",
+    "bs-fetch": "^0.3.0",
+    "bs-platform": "^4.0.6",
+    "graphql_ppx": "^0.2.7",
+    "reason-react": "^0.5.3"
+  }
+}
