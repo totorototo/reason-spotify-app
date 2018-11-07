@@ -62,21 +62,7 @@ let make = (~query, _children) => {
              switch (result) {
              | Loading => <div> {"Loading" |> ReasonReact.string} </div>
              | Error(_e) => <div> {"Error" |> ReasonReact.string} </div>
-             | Data(response) =>
-               <div style=Styles.searchResult>
-                 {
-                   response##search
-                   |> Array.mapi((_index, item) =>
-                        switch (item) {
-                        | `Album(album) => <Album album />
-                        | `Artist(artist) => <Artist artist />
-                        | `Playlist(playlist) => <Playlist playlist />
-                        | `Track(track) => <Track track />
-                        }
-                      )
-                   |> ReasonReact.array
-                 }
-               </div>
+             | Data(response) => <div style=Styles.searchResult />
              }
          }
     </SearchItemsQuery>;
