@@ -165,7 +165,6 @@ let make = _children => {
       <div style=Styles.queriesContainer>
         <header className="header">
           <input
-            className="new-query"
             placeholder="What are you looking for ?"
             value={state.newQuery}
             onKeyDown={
@@ -187,9 +186,8 @@ let make = _children => {
         {
           queriesLength === 0 ?
             ReasonReact.null :
-            <section className="main">
+            <section>
               <input
-                className="toggle-all"
                 type_="checkbox"
                 onChange={
                   event => {
@@ -199,9 +197,7 @@ let make = _children => {
                 }
                 checked={activeTodoCount === 0}
               />
-              <ul className="query-list">
-                {ReasonReact.array(List.toArray(queryItems))}
-              </ul>
+              <ul> {ReasonReact.array(List.toArray(queryItems))} </ul>
             </section>
         }
       </div>

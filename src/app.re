@@ -1,5 +1,3 @@
-
-
 type route =
   | Main
   | Login

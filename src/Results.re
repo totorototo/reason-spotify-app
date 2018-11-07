@@ -2,39 +2,22 @@
 
 module SearchItems = [%graphql
   {|
-  query searchItems($queryParam: String, $typeParam: String) {
+  query searchItems($queryParam: String!, $typeParam: String!) {
     search(queryParam: $queryParam, typeParam: $typeParam) {
       ... on Artist {
         type
         id
-        genres
-        name
       }
-
       ... on Album {
         type
         id
-        name
-        album_type
-        release_date
-        images{
-          url
-        }
       }
-
       ... on Playlist {
         id
-        name
         type
-        owner {
-          display_name
-          id
-        }
       }
-
       ... on Track {
         type
-        name
         id
       }
     }
@@ -62,7 +45,30 @@ let make = (~query, _children) => {
              switch (result) {
              | Loading => <div> {"Loading" |> ReasonReact.string} </div>
              | Error(_e) => <div> {"Error" |> ReasonReact.string} </div>
-             | Data(response) => <div style=Styles.searchResult />
+             | Data(response) =>
+               <div style=Styles.searchResult>
+                 {
+                   switch (response##search) {
+                   | None => <div> {"Loading" |> ReasonReact.string} </div>
+                   | Some(matches) =>
+                     let realMatches =
+                       matches->Belt.Array.keepMap(match => match);
+                     realMatches->Belt.Array.map(item =>
+                       switch (item) {
+                       | `Album(_item) =>
+                         <div> {"al" |> ReasonReact.string} </div>
+                       | `Artist(_item) =>
+                         <div> {"ar" |> ReasonReact.string} </div>
+                       | `Track(_item) =>
+                         <div> {"tr" |> ReasonReact.string} </div>
+                       | `Playlist(_item) =>
+                         <div> {"pl" |> ReasonReact.string} </div>
+                       }
+                     )
+                     |> ReasonReact.array;
+                   }
+                 }
+               </div>
              }
          }
     </SearchItemsQuery>;

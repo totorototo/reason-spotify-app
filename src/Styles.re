@@ -62,7 +62,7 @@ let loginContainer =
 
 let toolbarStyle =
   ReactDOMRe.Style.make(
-    ~marginTop="90px",
+    ~margin="40px",
     ~padding="5px",
     ~backgroundColor="#1DB954",
     ~color="#FFFFFF",
@@ -99,10 +99,9 @@ let right =
   ReactDOMRe.Style.make(
     ~color="#000000",
     ~fontSize="80px",
-    ~fontFamily={|American Typewriter|},
+    ~fontFamily={|Roboto Condensed|},
     ~fontWeight="600",
-    ~marginLeft="10px",
-    ~transform={|scaleX(-1) scaleY(-1)|},
+    ~margin="5px",
     (),
   );
 
