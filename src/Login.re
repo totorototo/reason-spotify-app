@@ -9,7 +9,7 @@ type action =
   | GotCrendentials
   | FailedToGetCrendential;
 
-let url = {|https://accounts.spotify.com/authorize?client_id=864d590d605541b2b2fbaa61047cb7dd&redirect_uri=http://localhost:3000/callback&scope=user-library-read%20user-read-recently-played%20user-top-read%20playlist-read-private%20user-read-private%20user-read-email&response_type=token&state=123|};
+let url = {|https://accounts.spotify.com/authorize?client_id=864d590d605541b2b2fbaa61047cb7dd&redirect_uri=http://localhost:3000/callback&response_type=token&state=123|};
 
 let redirect: string => unit = [%bs.raw
   {|

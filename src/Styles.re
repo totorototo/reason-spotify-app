@@ -6,7 +6,10 @@ let queriesContainer =
     ~display="flex",
     ~flex="1",
     ~flexDirection="column",
-    ~width={|25%|},
+    ~width={|30%|},
+    ~fontFamily="Roboto",
+    ~fontSize="20px",
+    ~fontWeight="300",
     (),
   );
 
@@ -20,7 +23,7 @@ let resultsContainer =
     ~justifyContent="center",
     ~alignItems="center",
     ~fontFamily={|Roboto|},
-    ~width={|75%|},
+    ~width={|70%|},
     (),
   );
 
@@ -62,7 +65,7 @@ let loginContainer =
 
 let toolbarStyle =
   ReactDOMRe.Style.make(
-    ~marginTop="90px",
+    ~margin="40px",
     ~padding="5px",
     ~backgroundColor="#1DB954",
     ~color="#FFFFFF",
@@ -99,10 +102,9 @@ let right =
   ReactDOMRe.Style.make(
     ~color="#000000",
     ~fontSize="80px",
-    ~fontFamily={|American Typewriter|},
+    ~fontFamily={|Roboto Condensed|},
     ~fontWeight="600",
-    ~marginLeft="10px",
-    ~transform={|scaleX(-1) scaleY(-1)|},
+    ~margin="5px",
     (),
   );
 

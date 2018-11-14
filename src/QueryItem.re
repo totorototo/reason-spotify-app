@@ -73,6 +73,7 @@ let make =
       },
     /* escape key */
     render: ({state, handle, send}) => {
+      let toto = "";
       let className =
         [query.completed ? "completed" : "", editing ? "editing" : ""]
         |> String.concat(" ");
@@ -96,8 +97,8 @@ let make =
           <button className="destroy" onClick={_ => onDestroy()} />
         </div>
         <input
-          ref={handle(setEditFieldRef)}
           className="edit"
+          ref={handle(setEditFieldRef)}
           value={state.editText}
           onBlur={_event => send(Submit)}
           onChange={
