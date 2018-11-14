@@ -6,7 +6,10 @@ let queriesContainer =
     ~display="flex",
     ~flex="1",
     ~flexDirection="column",
-    ~width={|25%|},
+    ~width={|30%|},
+    ~fontFamily="Roboto",
+    ~fontSize="20px",
+    ~fontWeight="300",
     (),
   );
 
@@ -20,7 +23,7 @@ let resultsContainer =
     ~justifyContent="center",
     ~alignItems="center",
     ~fontFamily={|Roboto|},
-    ~width={|75%|},
+    ~width={|70%|},
     (),
   );
 

@@ -1,3 +1,5 @@
+[%bs.raw {|require('./app.css')|}];
+
 type route =
   | Main
   | Login
@@ -51,8 +53,7 @@ let make = _children => {
       );
     self.onUnmount(() => ReasonReact.Router.unwatchUrl(watcherID));
   },
-  render: self => {
-    Js.log(self.state.token);
+  render: self =>
     switch (self.state.route, self.state.isUserAuthorized) {
     | (Main, true) => <Main token={self.state.token} />
     | (Main, false) => <Login />
@@ -61,6 +62,5 @@ let make = _children => {
     | (NotFound, false) => <Login />
     | (Callback(url), _) =>
       <Callback url dispatch=(token => self.send(UpdateToken(token))) />
-    };
-  },
+    },
 };

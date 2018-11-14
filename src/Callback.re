@@ -7,5 +7,5 @@ let make = (~url, ~dispatch, _children) => {
     dispatch(token);
     ();
   },
-  render: _self => <div> ("CallBack" |> ReasonReact.string) </div>
+  render: _self => <div> {"CallBack" |> ReasonReact.string} </div>,
 };
